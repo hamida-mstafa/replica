@@ -38,7 +38,7 @@ As a user of the application you will be able to:
 Use the command given below to run automated tests.
 
 
-        python manage.py test gallery
+        python manage.py test replica
 
 
 
@@ -53,4 +53,4 @@ Use the command given below to run automated tests.
 
 ## License
 
-This project is licensed under the MIT License 
+This project is licensed under the MIT License
