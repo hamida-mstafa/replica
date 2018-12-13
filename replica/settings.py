@@ -28,12 +28,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 MODE=config("MODE", default="dev")
 
-
-SECRET_KEY = '1ll$18*&mv-m0k%0167+7)9a%j+@6863q#k9@8v%r2(8mik_=l'
+SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
-
-# ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -83,10 +79,7 @@ WSGI_APPLICATION = 'replica.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-MODE=config("MODE", default="dev")
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
-# development
+
 if config('MODE')=="dev":
    DATABASES = {
        'default': {
@@ -152,9 +145,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+# Configure Django App for Heroku.
 django_heroku.settings(locals())

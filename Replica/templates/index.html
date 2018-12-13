@@ -8,6 +8,7 @@ function CopyFunction() {
   alert("Copied the text: " + copyText.value);
 }
 </script>
+<img src="" alt="">
 	<div class="container-fluid">
         <div class="row">
                 <div class="row">
@@ -28,8 +29,8 @@ function CopyFunction() {
                         <div class="portfolio_images_overlay text-center">
                             <h6 class="clrd-font" >{{image.image_name}}</h6>
                             <h6 class="clrd-font"><span style="color: #fff;">Location:</span>{{image.image_location}}</h6>
+                            <h6 class="clrd-font" >{{image.image_description}}</h6>
 
-                            <input type="text" id="imagelink" class="form-control input-sm" value="save image{{image.image_path.url}}" class="hidden">
                             <button class="btn btn-primary" onclick="CopyFunction()">
                                 <i class="fa fa-copy" style="color: #d6962c"></i> Copy Link
                             </button>
