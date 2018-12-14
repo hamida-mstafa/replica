@@ -35,12 +35,15 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 INSTALLED_APPS = [
     'Replica',
+    'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
 ]
 
 MIDDLEWARE = [
